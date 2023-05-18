@@ -63,6 +63,8 @@ class AviansDataset(Dataset):
             transform = transforms.Compose([
                         transforms.Resize(size=RESCALE_SIZE),
                         transforms.RandomRotation(degrees=180),
+                        transforms.RandomRotation(degrees=90),
+                        transforms.RandomRotation(degrees=270),
                         transforms.RandomPerspective(distortion_scale=0.6, p=1.0),
                         transforms.RandomCrop(size=(128, 128)),
                         transforms.ToTensor(),
